@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>address page</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    {%for info in text%}
+    <div class='can'>
+    <center>
+    <h1>{{info.fellowship}}</h1>
+    <h2>{{info.time}}</h2>
+    <h4>{{info.description}}</h4>
+    <a href={%url 'detail' info.id %}><button class=sad>READ</button></a>
+    </center>
+    </div>
+    {%endfor%}
+    </div>
+</body>
+<style>
+     body{background-image:url("{%static 'vine.jpg'%}"); background-size:cover;}
+    .sad{background-color:rgba(0, 0, 255, 0.664); height:50px; width:150px; border-radius:30px; border:0px;}
+    a{text-decoration:none; color:black}
+    .can{ box-shadow:5px 5px 5px 5px black; height:auto; border-radius:10px; width:auto; background-color: white;}
+</style>
+</html>
